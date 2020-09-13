@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour
 {
@@ -12,6 +13,9 @@ public class Player : MonoBehaviour
     public int health = 5;
     private void Update()
     {
+        if(health <= 0){
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        }
     //moving the player vertically
     //Time.deltaTime makes sure that movement is consistent in all PCs
     transform.position = Vector2.MoveTowards(transform.position, targetPosition, speed * Time.deltaTime);
