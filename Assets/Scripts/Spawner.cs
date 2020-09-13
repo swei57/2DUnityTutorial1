@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Spawner : MonoBehaviour
 {
-    public GameObject obstable;
+    public GameObject[] obstaclePatterns;
     private float timeBetweenSpawn;
     public float startTimeBetweenSpawn; 
     public float decreaseTime;
@@ -12,8 +12,9 @@ public class Spawner : MonoBehaviour
 
     private void Update(){
         if(timeBetweenSpawn <= 0){
-            if(obstable != null){
-            Instantiate(obstable, transform.position, Quaternion.identity);
+            int randomNum = Random.Range(0, obstaclePatterns.Length);
+            if(obstaclePatterns != null){
+            Instantiate(obstaclePatterns[randomNum], transform.position, Quaternion.identity);
             }
             timeBetweenSpawn = startTimeBetweenSpawn;
             if(startTimeBetweenSpawn > minTime){
