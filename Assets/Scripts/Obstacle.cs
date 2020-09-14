@@ -16,7 +16,6 @@ void OnTriggerEnter2D(Collider2D other) {
             //decrease hp on players, play particle effect
             Instantiate(effect, transform.position, Quaternion.identity);
             other.GetComponent<Player>().health -= damage;
-            Debug.Log(other.GetComponent<Player>().health);
             Destroy(gameObject);
         }
     }

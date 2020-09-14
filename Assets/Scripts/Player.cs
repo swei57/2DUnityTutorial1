@@ -2,9 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class Player : MonoBehaviour
 {
+
     public GameObject effect;
     private Vector2 targetPosition;
     public float yIncrement;
@@ -12,11 +14,17 @@ public class Player : MonoBehaviour
     public float maxHeight;
     public float minHeight;
     public int health = 5;
+    public Text healthDisplayText;
+
+    public GameObject gameOver;
+
     private void Update()
     {
-        if(health <= 0){
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-        }
+    healthDisplayText.text = health.ToString();
+    if(health <= 0){
+        gameOver.SetActive(true);
+        Destroy(gameObject);
+    }
     //moving the player vertically
     //Time.deltaTime makes sure that movement is consistent in all PCs
     transform.position = Vector2.MoveTowards(transform.position, targetPosition, speed * Time.deltaTime);

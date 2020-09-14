@@ -12,9 +12,10 @@ GameObject:
   - component: {fileID: 8434563931240924290}
   - component: {fileID: 8434563931240924293}
   - component: {fileID: 8434563931240924292}
+  - component: {fileID: -2692935488031367154}
   m_Layer: 0
   m_Name: Obstacle
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -113,4 +114,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   effect: {fileID: 7551711485783430378, guid: a6dc8483652f5854f8cd3d145ac67126, type: 3}
   damage: 1
-  speed: 10
+  speed: 20
+--- !u!114 &-2692935488031367154
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8434563931240924289}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0495b394b30bb4e48b7177d0fb58d4b9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lifeTime: 10
